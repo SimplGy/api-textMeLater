@@ -11,6 +11,8 @@
     "csurf": "^1.8.3",
     "express": "^4.12.0",
     "express-session": "^1.10.3",
+    "google-auth-library": "^0.9.9",
+    "googleapis": "^14.1.0",
     "sanitize-html": "^1.10.0",
     "twilio": "^1.11.1"
   }

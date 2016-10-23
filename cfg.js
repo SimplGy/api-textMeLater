@@ -1,5 +1,7 @@
 const cfg = {
-  twilio: require('./.credentials/twilio.json')
+  twilio: require('./.credentials/twilio.json'),
+  sheets: require('./googleSheets.json'),
+  googleSheetsKeys: require('./.credentials/sheets.json')
 };
 
 

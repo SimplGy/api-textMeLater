@@ -2,7 +2,18 @@
 
 This is an API server for an in-development toy project.
 
+
+
 ## Getting Started
+
+Install
+
+    npm install
+    mkdir .credentials
+    echo '{ "sid":"", "token":"", "phone":"" }' > .credentials/twilio.json
+    echo '{TODO}' > .credentials/sheets.json
+
+Run
 
     node . // or nodemon .
 
@@ -32,6 +43,8 @@ Run with a debugger:
 - [x] `GET /syncWithSheets` for a preconfigured google sheet id pull and log out data from them. Each row in the google sheet has all the info needed to send one text message (even phone number).
 - [x] `GET /send/` send messages specified by google sheets structure
 - [x] Get `node-schedule` running, and have a working status page
+- [x] Deploy to Digital Ocean VPS
+- [ ] Figure out how to route `:80/api` to `:3000`, and run `node .` without sudo
 - [ ] Connect status page to uptime robot
 - [ ] Design scheduled message sending:
 

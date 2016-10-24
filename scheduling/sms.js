@@ -1,15 +1,15 @@
 var cron = require('node-schedule');
 var twilioClient = require('../twilioClient');
-var app = require('../app');
+var cfg = require('../config/cfg');
 
 
 
 
-schedule({
-  cron: '0 */2 * * * * *',
-  phone: 'test',
-  msg: 'Test of `0 */2` cron syntax'
-});
+// schedule({
+//   cron: '*/10 * * * * * *',
+//   phone: 'test',
+//   msg: 'Test of `*/10` cron syntax'
+// });
 
 
 
@@ -20,13 +20,13 @@ schedule({
 /// .msg
 function schedule(obj) {
   console.log(`Scheduling '${obj.cron}' for '${obj.phone}'. msg: ${obj.msg}`);
-  cron.scheduleJob(obj.cron, onScheduledEvent);
+  cron.scheduleJob(obj.cron, onScheduledEvent.bind(null, obj));
 }
 
 function onScheduledEvent(obj) {
   let d = new Date();
   console.log(`${d.toLocaleString()} onScheduledEvent for ${obj.cron}`)
-  app.mostRecentEvent = d.getTime();
+  cfg.mostRecentEvent = d.getTime();
   twilioClient.sendSms(obj.phone, obj.msg)
 }
 

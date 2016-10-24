@@ -31,7 +31,7 @@ Run with a debugger:
 - [x] `GET /send` hard coded text messages via Twilio or similar to my phone
 - [x] `GET /syncWithSheets` for a preconfigured google sheet id pull and log out data from them. Each row in the google sheet has all the info needed to send one text message (even phone number).
 - [x] `GET /send/` send messages specified by google sheets structure
-- [ ] Get `node-schedule` running, and have a working status page
+- [x] Get `node-schedule` running, and have a working status page
 - [ ] Connect status page to uptime robot
 - [ ] Design scheduled message sending:
 

@@ -1,5 +1,5 @@
 var schedule = require('node-schedule');
-var app = require('../app');
+var cfg = require('../config/cfg');
 
 // var rule = new schedule.RecurrenceRule();
 // rule.minute = 03;
@@ -33,7 +33,8 @@ var app = require('../app');
 
 module.exports = function(req, resp) {
   let scheduledJobs = Object.keys(schedule.scheduledJobs).length
-  let minsSince = (Date.now() - app.mostRecentEvent) / 1000 / 60
+  let minsSince = (Date.now() - cfg.mostRecentEvent) / 1000 / 60;
+  minsSince = Math.ceil(minsSince * 10) / 10;
 
   let html = `
     <h1>Status Page</h1>

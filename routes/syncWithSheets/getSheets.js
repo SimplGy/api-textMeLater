@@ -1,4 +1,4 @@
-var cfg = require('../../cfg');
+var cfg = require('../../config/cfg');
 var google = require('googleapis');
 var googleAuth = require('google-auth-library');
 var fs = require('fs');
@@ -48,6 +48,7 @@ module.exports = function getSheets(fn) {
       range: 'A2:E',
     }, function(err, response) {
       if (err) {
+        console.log("Error loading google spreadsheets")
         fn(err);
         return;
       }

@@ -5,7 +5,7 @@ var session = require('express-session');
 var flash = require('connect-flash');
 var csurf = require('csurf');
 
-var config = require('./cfg');
+var config = require('./config/cfg');
 
 // Create Express web app
 var app = express();

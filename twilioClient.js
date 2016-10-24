@@ -1,4 +1,4 @@
-var cfg = require('./cfg');
+var cfg = require('./config/cfg');
 var client = require('twilio')(cfg.twilio.sid, cfg.twilio.token);
 
 
